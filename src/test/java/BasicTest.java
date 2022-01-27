@@ -15,7 +15,7 @@ public class BasicTest {
     @DisplayName("Catching an Exception")
     public void negativeTest() {
         assertThrows(Exception.class, () -> {
-
+            throw new Exception();
         });
     }
 }
