@@ -69,7 +69,7 @@ hs_err_pid*
 .idea_modules/
 
 # JIRA plugin
-atlassian-ide-plugin.xml
+atlassian-ide-plugin.xmlg
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
@@ -104,3 +104,5 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+!gradle/wrapper/gradle-wrapper.jar
