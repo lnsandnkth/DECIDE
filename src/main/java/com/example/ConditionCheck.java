@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.List;
+
 public class ConditionCheck {
 
     /**
@@ -37,4 +39,20 @@ public class ConditionCheck {
         return calNorm(p) <= radius;
     }
 
+
+    public static boolean LIC1(List<Point> points, double radius) {
+
+        int max_consecutive = 0;
+
+        int consecutive = 0;
+        for (Point point : points) {
+            if (!isInCircle(point, radius)) {
+                consecutive++;
+                max_consecutive = Math.max(consecutive, max_consecutive);
+            } else
+                consecutive = 0;
+        }
+
+        return max_consecutive >= 3;
+    }
 }
