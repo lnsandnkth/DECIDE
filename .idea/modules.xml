@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DECIDE.iml" filepath="$PROJECT_DIR$/.idea/DECIDE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DECIDE.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DECIDE.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DECIDE.test.iml" filepath="$PROJECT_DIR$/.idea/modules/DECIDE.test.iml" />
+    </modules>
+  </component>
+</project>
