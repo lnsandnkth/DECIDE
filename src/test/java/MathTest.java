@@ -51,6 +51,15 @@ public class MathTest {
     }
 
 
+    @Test
+    @DisplayName("isTriangleArea: calculate area of triangle")
+    public void isTriangleAreaTest() {
 
+        Assertions.assertAll(
+            () -> Assertions.assertEquals(3, ConditionCheck.isTriangleArea(new Point(0, 0), new Point(3, 0), new Point(0, 2))),
+            () -> Assertions.assertEquals(0, ConditionCheck.isTriangleArea(new Point(0, 1), new Point(0, 3), new Point(0, 2))),
+            () -> Assertions.assertEquals(10, ConditionCheck.isTriangleArea(new Point(-5, 0), new Point(5, 0), new Point(0, 2)))
+        );
+    }
 
 }

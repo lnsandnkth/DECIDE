@@ -57,4 +57,33 @@ public class ConditionTest {
         );
 
     }
+
+    @Test
+    @DisplayName("LIC3 Test: return true if exists three consecutive points form a triangle with are greater than area1")
+    public void LIC3Test() {
+        List<Point> positiveList = Arrays.asList(
+            new Point(1, 0),
+            new Point(2, 0),
+            new Point(3, 0),
+            new Point(3, 1),
+            new Point(4, 0),
+            new Point(6, 0),
+            new Point(5, 5),
+            new Point(0, 0)
+        );
+
+        List<Point> negativeList = Arrays.asList(
+                new Point(1, 0),
+                new Point(2, 0),
+                new Point(3, 0),
+                new Point(3, 1),
+                new Point(4, 0),
+                new Point(6, 0)
+        );
+
+        Assertions.assertAll(
+            () -> Assertions.assertTrue(ConditionCheck.LIC3(positiveList, 2)),
+            () -> Assertions.assertFalse(ConditionCheck.LIC3(negativeList, 2))
+        );
+    }
 }
