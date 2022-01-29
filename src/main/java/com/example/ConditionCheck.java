@@ -1,5 +1,4 @@
 package com.example;
-import com.example.Point;
 import java.util.List;
 
 public class ConditionCheck {
@@ -27,7 +26,7 @@ public class ConditionCheck {
         return Math.sqrt(Math.pow(p1.getX() - p2.getX(), 2) + Math.pow(p1.getY() - p2.getY(), 2));
     }
       
-         /**
+    /**
      * Computes the length / size / norm of a vector
      * @param p vector
      * @see Point
@@ -72,5 +71,14 @@ public class ConditionCheck {
         }
 
         return max_consecutive >= 3;
+    }
+
+    public static boolean LIC5(List<Point> points) {
+
+        for (int i = 1; i < points.size(); i++)
+            if (points.get(i).getX() - points.get(i-1).getX() < 0)
+                return true;
+
+        return false;
     }
 }
