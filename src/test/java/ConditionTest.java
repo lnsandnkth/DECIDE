@@ -25,7 +25,8 @@ public class ConditionTest {
         List<Point> points = List.of(new Point(1, 5), new Point(3.2, 7));
         double length1 = 2.5;
         boolean res = conditionCheck.LIC0(points, length1);
-        assert(res);
+        assert (res);
+    }
       
     @Test
     @DisplayName("LIC1 Test: should return true if input list contains 3 consecutive points inside a circle")
