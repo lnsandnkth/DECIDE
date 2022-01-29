@@ -87,7 +87,7 @@ public class ConditionCheck {
      * @param epsilon a value for deviation
      * @return boolean
      */
-    public boolean LIC2(List<Point> points, float epsilon)  {
+    public boolean LIC2(List<Point> points, float epsilon) {
         Queue<Point> pointQueue = new LinkedList<>();
 
         for (Point point : points) {
@@ -103,6 +103,9 @@ public class ConditionCheck {
                     return true;
                 }
             }
+        }
+        return false;
+    }
 
 
     /**
