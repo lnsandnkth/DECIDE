@@ -87,6 +87,9 @@ public class ConditionCheck {
         if (area1 < 0) {
             throw new IllegalArgumentException("Area should not be less than zero");
         }
+        if (points.size() < 3) {
+            throw new IllegalArgumentException("There should be at least three points");
+        }
         for (int i = 0; i < points.size() - 2; i++) {
             Point p1 = points.get(i);
             Point p2 = points.get(i + 1);
