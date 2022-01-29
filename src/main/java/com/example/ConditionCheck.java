@@ -73,4 +73,37 @@ public class ConditionCheck {
 
         return max_consecutive >= 3;
     }
+
+
+
+    /**
+     * LIC3 - Launch Interceptor Condition #3
+     * Checks if exists a triangle(formed by three consecutive data points) with area greater than area1.
+     * @param points List<Point> list of points to iterate on
+     * @param area1 the area to compare with
+     * @return (boolean) true is there exists such triangle
+     */
+    public static boolean LIC3(List<Point> points, double area1) throws IllegalArgumentException {
+        if (area1 < 0) {
+            throw new IllegalArgumentException("Area should not be less than zero");
+        }
+        for (int i = 0; i < points.size() - 2; i++) {
+            Point p1 = points.get(i);
+            Point p2 = points.get(i + 1);
+            Point p3 = points.get(i + 2);
+            if (isTriangleArea(p1, p2, p3) - area1 > 0.000001) return true;
+        }
+        return false;
+    }
+
+    /**
+     * Checks if three points form a triangle and return the area if it is
+     * @param p1 point
+     * @return (double) area of the triangle if it is a triangle, otherwise return 0
+     */
+    public static double isTriangleArea(Point p1, Point p2, Point p3) {
+        return 0.5 * (p1.getX() * (p2.getY() - p3.getY())
+                + p2.getX() * (p3.getY() - p1.getY())
+                + p3.getX() * (p1.getY() - p2.getY()));
+    }
 }
