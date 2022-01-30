@@ -57,7 +57,7 @@ public class MathFunctions {
 
     public static double calcPhase(Point p) {
 
-        return Math.atan2(p.getY(), p.getX());
+        return (Math.atan2(p.getY(), p.getX()) + 2 * PI) % (2 * PI);
     }
 
     public static int calcQuadrant(Point p) {

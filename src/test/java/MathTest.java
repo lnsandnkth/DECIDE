@@ -4,6 +4,9 @@ import org.junit.jupiter.api.function.Executable;
 import com.example.utils.MathFunctions;
 import java.util.function.BiFunction;
 
+import static java.lang.Math.PI;
+import static java.lang.Math.exp;
+
 public class MathTest {
 
     @Test
@@ -60,5 +63,52 @@ public class MathTest {
             () -> Assertions.assertEquals(10, MathFunctions.isTriangleArea(new Point(-5, 0), new Point(5, 0), new Point(0, 2)))
         );
     }
+
+    @Test
+    @DisplayName("calcPhase : calculate phase of a point ie angle in radian from vector (1,0) in counterclockwise direction")
+    public void calcPhaseTest() {
+
+        BiFunction<Double, Point, Executable> phaseTest = (expected, point) -> () -> {
+            double phase = MathFunctions.calcPhase(point);
+            System.out.println("Computing angle of (" + point.getX() + ", " + point.getY() + "), expected= " + expected + ", computed= " + phase);
+            Assertions.assertEquals(expected, phase);
+        };
+
+        Assertions.assertAll(
+            phaseTest.apply(0d, new Point(1, 0)),
+            phaseTest.apply(PI/2, new Point(0, 1)),
+            phaseTest.apply(PI, new Point(-1, 0)),
+            phaseTest.apply(3*PI/2, new Point(0, -1))
+                            );
+    }
+
+    @Test
+    @DisplayName("calcQuadrant : calculate quadrant of a point (either of { 0, 1, 2, 3 } in counterclockwise direction)")
+    public void calcQuadrantTest() {
+
+        BiFunction<Integer, Point, Executable> quadrantTest = (expected, point) -> () -> {
+            int quadrant = MathFunctions.calcQuadrant(point);
+            System.out.println("Computing quadrant of (" + point.getX() + ", " + point.getY() + "), expected= " + expected + ", computed= " + quadrant);
+            Assertions.assertEquals(expected, quadrant);
+        };
+
+        // Testing normal cases
+        Assertions.assertAll(
+            quadrantTest.apply(0, new Point(1, 1)),
+            quadrantTest.apply(1, new Point(-1, 1)),
+            quadrantTest.apply(2, new Point(-1, -1)),
+            quadrantTest.apply(3, new Point(1, -1))
+                            );
+
+        // Testing edge cases
+        Assertions.assertAll(
+            quadrantTest.apply(0, new Point(1, 0)),
+            quadrantTest.apply(1, new Point(0, 1)),
+            quadrantTest.apply(2, new Point(-1, 0)),
+            quadrantTest.apply(3, new Point(0, -1))
+                            );
+    }
+
+
 
 }
