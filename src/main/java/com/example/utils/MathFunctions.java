@@ -71,12 +71,16 @@ public class MathFunctions {
      * @param p Point to compute the quadrant of
      * @see Point
      * @see MathFunctions#calcPhase(Point) is used to determine the quadrant
-     * @return integer in [0, 3] representing the quadrant in counterclockwise direction. returns the lowest quadrant if the point is in between two quadrants
+     * @return integer in [1, 4] representing the quadrant in counterclockwise direction. returns the lowest quadrant number if the point is in between two quadrants
      */
     public static int calcQuadrant(Point p) {
 
         double phase = calcPhase(p) % (2 * PI);
 
-        return (int)(2 * phase / PI);
+        if (p.getX() == 0 || p.getY() == 0) { // if we're on a line
+            return 1 + Math.max(0, (int)(2*phase / PI) - 1); // get the quadrant before (smallest quadrant number), max with 0 for the case between quadrant 1 and 4
+        }
+
+        return 1 + (int)(2 * phase / PI); // normal case
     }
 }

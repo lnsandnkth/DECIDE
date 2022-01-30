@@ -94,15 +94,15 @@ public class MathTest {
 
         // Testing normal cases
         Assertions.assertAll(
-            quadrantTest.apply(0, new Point(1, 1)),
-            quadrantTest.apply(1, new Point(-1, 1)),
-            quadrantTest.apply(2, new Point(-1, -1)),
-            quadrantTest.apply(3, new Point(1, -1))
+            quadrantTest.apply(1, new Point(1, 1)),
+            quadrantTest.apply(2, new Point(-1, 1)),
+            quadrantTest.apply(3, new Point(-1, -1)),
+            quadrantTest.apply(4, new Point(1, -1))
                             );
 
         // Testing edge cases
         Assertions.assertAll(
-            quadrantTest.apply(0, new Point(1, 0)),
+            quadrantTest.apply(1, new Point(1, 0)),
             quadrantTest.apply(1, new Point(0, 1)),
             quadrantTest.apply(2, new Point(-1, 0)),
             quadrantTest.apply(3, new Point(0, -1))
