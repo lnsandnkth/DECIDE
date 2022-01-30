@@ -55,11 +55,24 @@ public class MathFunctions {
         return angleInP2;
     }
 
+    /**
+     * Computes the phase of a point, ie the angle between the vector and the (1, 0) vector.
+     * @param p Point to compute the phase of
+     * @see Point
+     * @return the phase of the point in radians, counterclockwise direction in [0, 2*PI]
+     */
     public static double calcPhase(Point p) {
 
         return (Math.atan2(p.getY(), p.getX()) + 2 * PI) % (2 * PI);
     }
 
+    /**
+     * Computes the quadrant in which a point is.
+     * @param p Point to compute the quadrant of
+     * @see Point
+     * @see MathFunctions#calcPhase(Point) is used to determine the quadrant
+     * @return integer in [0, 3] representing the quadrant in counterclockwise direction. returns the lowest quadrant if the point is in between two quadrants
+     */
     public static int calcQuadrant(Point p) {
 
         double phase = calcPhase(p) % (2 * PI);
