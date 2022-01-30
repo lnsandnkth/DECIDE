@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class LIC7Test {
-    
+
     @Test
     @DisplayName("LIC7 returning true test")
     public void LIC7TrueTest() {
@@ -58,6 +58,20 @@ public class LIC7Test {
         );
 
         Assertions.assertFalse(LIC7.LIC7(edgeCaseList, 1, 10));
+    }
+
+
+    @Test
+    @DisplayName("LIC7 returning true on last point")
+    public void LIC7LastPointTrueTest(){
+        List<Point> list = Arrays.asList(
+                new Point(-1, 0),
+                new Point(0,0),
+                new Point(0, 0),
+                new Point(0, 5)
+        );
+
+        Assertions.assertTrue(LIC7.LIC7(list, 2, 3));
     }
 
     @Test
