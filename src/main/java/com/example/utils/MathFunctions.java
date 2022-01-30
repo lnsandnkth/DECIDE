@@ -5,6 +5,7 @@ import java.util.List;
 import static java.lang.Math.*;
 
 public class MathFunctions {
+
     public static double calDistance(Point p1, Point p2) {
         return Math.sqrt(Math.pow(p1.getX() - p2.getX(), 2) + Math.pow(p1.getY() - p2.getY(), 2));
     }
@@ -52,5 +53,17 @@ public class MathFunctions {
         float angleInP2 = (float) acos((a2 + c2 - b2) / (2 * a * c));
         angleInP2 = (float) (angleInP2 * 180 / PI);
         return angleInP2;
+    }
+
+    public static double calcPhase(Point p) {
+
+        return Math.atan2(p.getY(), p.getX());
+    }
+
+    public static int calcQuadrant(Point p) {
+
+        double phase = calcPhase(p) % (2 * PI);
+
+        return (int)(2 * phase / PI);
     }
 }
