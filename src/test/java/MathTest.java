@@ -1,8 +1,7 @@
-import com.example.ConditionCheck;
-import com.example.Point;
+import com.example.utils.Point;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.function.Executable;
-
+import com.example.utils.MathFunctions;
 import java.util.function.BiFunction;
 
 public class MathTest {
@@ -13,9 +12,9 @@ public class MathTest {
     public void calDistanceTest() {
 
         Assertions.assertAll(
-            () -> Assertions.assertEquals(0, ConditionCheck.calDistance(new Point(10, 10), new Point(10, 10))),
-            () -> Assertions.assertEquals(2, ConditionCheck.calDistance(new Point(1, 1), new Point(1, 3))),
-            () -> Assertions.assertEquals(2, ConditionCheck.calDistance(new Point(-1, 0), new Point(-3, 0)))
+            () -> Assertions.assertEquals(0, MathFunctions.calDistance(new Point(10, 10), new Point(10, 10))),
+            () -> Assertions.assertEquals(2, MathFunctions.calDistance(new Point(1, 1), new Point(1, 3))),
+            () -> Assertions.assertEquals(2, MathFunctions.calDistance(new Point(-1, 0), new Point(-3, 0)))
                             );
     }
 
@@ -23,7 +22,7 @@ public class MathTest {
     @DisplayName("calNorm : length of vector")
     public void calNormTest() {
 
-        BiFunction<Double, Point, Executable> distTest = (expected, point) -> () -> Assertions.assertEquals(expected, ConditionCheck.calNorm(point));
+        BiFunction<Double, Point, Executable> distTest = (expected, point) -> () -> Assertions.assertEquals(expected, MathFunctions.calNorm(point));
 
         Assertions.assertAll(
             distTest.apply(0d, new Point(0, 0)),
@@ -37,8 +36,8 @@ public class MathTest {
     @DisplayName("isInsideCircle : check if a Point is in a circle")
     public void insideCircleTest() {
 
-        BiFunction<Point, Double, Executable> insideTest = (point, radius) -> () -> Assertions.assertTrue(ConditionCheck.isInCircle(point, radius));
-        BiFunction<Point, Double, Executable> outsideTest = (point, radius) -> () -> Assertions.assertFalse(ConditionCheck.isInCircle(point, radius));
+        BiFunction<Point, Double, Executable> insideTest = (point, radius) -> () -> Assertions.assertTrue(MathFunctions.isInCircle(point, radius));
+        BiFunction<Point, Double, Executable> outsideTest = (point, radius) -> () -> Assertions.assertFalse(MathFunctions.isInCircle(point, radius));
 
         Assertions.assertAll(
             insideTest.apply(new Point(0, 0), 1d),
@@ -56,9 +55,9 @@ public class MathTest {
     public void isTriangleAreaTest() {
 
         Assertions.assertAll(
-            () -> Assertions.assertEquals(3, ConditionCheck.isTriangleArea(new Point(0, 0), new Point(3, 0), new Point(0, 2))),
-            () -> Assertions.assertEquals(0, ConditionCheck.isTriangleArea(new Point(0, 1), new Point(0, 3), new Point(0, 2))),
-            () -> Assertions.assertEquals(10, ConditionCheck.isTriangleArea(new Point(-5, 0), new Point(5, 0), new Point(0, 2)))
+            () -> Assertions.assertEquals(3, MathFunctions.isTriangleArea(new Point(0, 0), new Point(3, 0), new Point(0, 2))),
+            () -> Assertions.assertEquals(0, MathFunctions.isTriangleArea(new Point(0, 1), new Point(0, 3), new Point(0, 2))),
+            () -> Assertions.assertEquals(10, MathFunctions.isTriangleArea(new Point(-5, 0), new Point(5, 0), new Point(0, 2)))
         );
     }
 
