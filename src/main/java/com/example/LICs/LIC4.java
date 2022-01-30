@@ -1,5 +1,6 @@
 package com.example.LICs;
 
+import com.example.utils.MathFunctions;
 import com.example.utils.Point;
 
 import java.util.List;
@@ -18,7 +19,8 @@ public class LIC4 {
             // check previous Q_PTS points
             for (int j = 0; j < Q_PTS; j++) {
 
-                // TODO compute quadrant of point
+                int quadrant = MathFunctions.calcQuadrant(points.get(i-j));
+                quadrants.add(quadrant);
             }
 
             if (quadrants.size() > QUADS) {
