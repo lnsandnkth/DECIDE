@@ -2,6 +2,8 @@ package com.example.utils;
 import com.example.utils.Point;
 import java.util.List;
 
+import static java.lang.Math.*;
+
 public class MathFunctions {
     public static double calDistance(Point p1, Point p2) {
         return Math.sqrt(Math.pow(p1.getX() - p2.getX(), 2) + Math.pow(p1.getY() - p2.getY(), 2));
@@ -39,5 +41,16 @@ public class MathFunctions {
         return 0.5 * (p1.getX() * (p2.getY() - p3.getY())
                 + p2.getX() * (p3.getY() - p1.getY())
                 + p3.getX() * (p1.getY() - p2.getY()));
+    }
+
+    public static double calcAngleInPoint2(Point p1, Point p2, Point p3) {
+        double a2 = Math.pow(calDistance(p2, p3), 2);
+        double b2 = Math.pow(calDistance(p1, p3), 2);
+        double c2 = Math.pow(calDistance(p1, p2), 2);
+        float a = (float) sqrt(a2);
+        float c = (float) sqrt(c2);
+        float angleInP2 = (float) acos((a2 + c2 - b2) / (2 * a * c));
+        angleInP2 = (float) (angleInP2 * 180 / PI);
+        return angleInP2;
     }
 }
