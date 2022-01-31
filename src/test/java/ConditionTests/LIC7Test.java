@@ -54,7 +54,9 @@ public class LIC7Test {
         List<Point> edgeCaseList = Arrays.asList(
                 new Point(1,1),
                 new Point(1,-1),
-                new Point(-1,-1)
+                new Point(-1,-1),
+                new Point(-1, 1),
+                new Point(0, 0)
         );
 
         Assertions.assertFalse(LIC7.LIC7(edgeCaseList, 1, 10));

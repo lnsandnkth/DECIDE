@@ -20,9 +20,9 @@ public class LIC7 {
             return false;
         }
 
-        for(int i = 0; i < points.size() - K_PTS; i++) {
+        for(int i = 0; i < points.size() - K_PTS - 1; i++) {
             Point p1 = points.get(i);
-            Point p2 = points.get(i + K_PTS);
+            Point p2 = points.get(i + K_PTS + 1);
             if(MathFunctions.calDistance(p1, p2) > LENGTH1){
                 return true;
             }
