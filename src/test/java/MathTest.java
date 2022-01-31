@@ -2,6 +2,9 @@ import com.example.utils.Point;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.function.Executable;
 import com.example.utils.MathFunctions;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.BiFunction;
 
 import static java.lang.Math.PI;
@@ -109,6 +112,18 @@ public class MathTest {
                             );
     }
 
+    @Test
+    @DisplayName("calCircleByPoints: calculate the smallest radius of circle including three points")
+    public void calcCircleTest() {
+        // Testing three points are not collinear
+        Assertions.assertEquals(1,
+            MathFunctions.calCircleByPoints(new Point(1, 0), new Point(-1, 0), new Point(0, 1)));
+        Assertions.assertEquals(5,
+                MathFunctions.calCircleByPoints(new Point(1, -6), new Point(2, 1), new Point(5, 2)));
 
+        // Testing three points are collinear
+        Assertions.assertEquals(5,
+                MathFunctions.calCircleByPoints(new Point(-5, 0), new Point(0, 0), new Point(5, 0)));
+    }
 
 }
