@@ -6,6 +6,7 @@ import java.util.List;
 
 
 public class LIC1 {
+
     /**
      * LIC1 - Launch Interceptor Condition #1
      * Checks if there is a set of 3 consecutive points outside a circle in an ordered list of points
@@ -14,6 +15,10 @@ public class LIC1 {
      * @return (boolean) true is there are 3 consecutive points outside the circle in the list
      */
     public static boolean LIC1(List<Point> points, double radius) {
+
+        if (radius < 0) {
+            return false;
+        }
 
         int max_consecutive = 0;
 

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class LIC2 {
+
     /**
      * LIC2 checks if there is an angle in the second point of a triangle that consists of three consecutive points that
      * either is less than PI - epsilon or greater than PI + epsilon.
@@ -15,6 +16,10 @@ public class LIC2 {
      * @return boolean
      */
     public static boolean LIC2(List<Point> points, float epsilon) {
+
+        if (!(epsilon >= 0 && epsilon < Math.PI))
+            return false;
+
         Queue<Point> pointQueue = new LinkedList<>();
 
         for (Point point : points) {
