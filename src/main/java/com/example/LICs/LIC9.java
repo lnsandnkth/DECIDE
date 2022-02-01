@@ -26,7 +26,7 @@ public class LIC9 {
             Point p3 = points.get(i + C_PTS + D_PTS + 2);
 
             double angle = MathFunctions.calcAngleInPoint2(p1, p2, p3);
-            if(angle < (180 - epsilon) || angle > (180 + epsilon)) {
+            if(angle < (Math.PI - epsilon) || angle > (Math.PI + epsilon)) {
                 return true;
             }
         }
