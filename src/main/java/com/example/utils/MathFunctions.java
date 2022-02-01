@@ -80,4 +80,55 @@ public class MathFunctions {
 
         return 1 + (int)(2 * phase / PI); // normal case
     }
+
+    /**
+     * Calculate the smallest radius of the circle including three points p1, p2, p3
+     * @param p1 Point
+     * @return (double) the smallest radius of the circle including by three points
+     */
+    public static double calCircleByPoints(Point p1, Point p2, Point p3) {
+        if (compareDoublePara(isTriangleArea(p1, p2, p3), 0 ) == 0) {
+            // if they are collinear, the smallest radius to include all points is
+            // the largest distance between two of three points
+            double dis1 = calDistance(p1, p2);
+            double dis2 = calDistance(p1, p3);
+            double dis3 = calDistance(p2, p3);
+            double maxDis = Math.max(dis1, dis2);
+            maxDis = Math.max(maxDis, dis3);
+            return maxDis / 2;
+        }
+        // if they form a triangle
+        double x1 = p1.getX();
+        double y1 = p1.getY();
+        double x2 = p2.getX();
+        double y2 = p2.getY();
+        double x3 = p3.getX();
+        double y3 = p3.getY();
+        double cal1 = ((x1 * x1 -x3 * x3) * (x1 - x2)
+                + (y1 * y1 - y3 * y3) * (x1 - x2)
+                + (x2 * x2 - x1 * x1) * (x1 - x3)
+                + (y2 * y2 - y1 * y1) * (x1 - x3))
+                / (2 * ((y3 - y1) * (x1 - x2) - (y2 - y1) * (x1 - x3)));
+        double cal2 = ((x1 * x1 -x3 * x3) * (y1 - y2)
+                + (y1 * y1 - y3 * y3) * (y1 - y2)
+                + (x2 * x2 - x1 * x1) * (y1 - y3)
+                + (y2 * y2 - y1 * y1) * (y1 - y3))
+                / (2 * ((x3 - x1) * (y1 - y2) - (x2 - x1) * (y1 - y3)));
+        double cal3 = - x1 * x1 - y1 * y1 - 2 * cal2 * x1 - 2 * cal1 * y1;
+
+        return Math.sqrt(cal1 * cal1 + cal2 * cal2 - cal3);
+    }
+
+    /**
+     * Compare two double parameters
+     * @param x double
+     * @param y double
+     * @return 0 if equal, 1 if x > y, -1 if x < y
+     */
+    public static int compareDoublePara(double x, double y) {
+        if (Math.abs(x - y) < 0.000001) return 0;
+        if (x > y) return 1;
+        return -1;
+    }
+
 }
