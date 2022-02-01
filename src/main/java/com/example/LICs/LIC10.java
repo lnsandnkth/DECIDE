@@ -26,7 +26,9 @@ public class LIC10 {
                 return true;
             }
             currentIndex++;
+
         }
+
         return false;
     }
 }
