@@ -56,7 +56,6 @@ public class ConditionTest {
         };
 
         boolean[] FUV = ConditionCheck.makeFUV(PUM, PUV);
-        System.out.println(Arrays.toString(FUV));
 
         Assertions.assertArrayEquals(new boolean[] { false, true, true }, FUV);
     }
