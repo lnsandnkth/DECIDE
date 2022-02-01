@@ -21,13 +21,13 @@ public class LIC6 {
             return false;
         }
 
-        for (int i = 0; i < points.size() - N_PTS; i++) {
-            if (MathFunctions.calDistance(points.get(i), points.get(i + N_PTS)) > DIST){
+        for (int i = 0; i < points.size() - N_PTS - 1; i++) {
+            if (MathFunctions.calDistance(points.get(i), points.get(i + N_PTS + 1)) > DIST){
                 return true;
             }
-            if(points.get(i) == points.get(i + N_PTS)){
+            if(points.get(i) == points.get(i + N_PTS + 1)){
                 double dist_to_all_others = 0.0d;
-                for(int j = i+1;j < i + N_PTS; j++){
+                for(int j = i+1;j < i + N_PTS + 1; j++){
                     dist_to_all_others += MathFunctions.calDistance(points.get(i), points.get(j));
                 }
                 if(dist_to_all_others > DIST){
