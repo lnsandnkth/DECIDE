@@ -15,9 +15,10 @@ public class LIC10 {
      */
     public static boolean LIC10(List<Point> points, int e_pts, int f_pts, float AREA_1) {
         int currentIndex = 0;
-        if (e_pts + f_pts < 5) {
+        if (points.size()<5 || !(e_pts >=1) || !(f_pts>=1) || !(e_pts+f_pts<=points.size()+3)) {
             return false;
         }
+
         while ((points.size()) - currentIndex > (e_pts + f_pts + 2)) {
             Point firstPoint = points.get(currentIndex);
             Point secondPoint = points.get(currentIndex + e_pts + 1);
