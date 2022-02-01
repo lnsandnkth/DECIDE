@@ -14,7 +14,7 @@ public class LIC2 {
      * @param epsilon a value for deviation
      * @return boolean
      */
-    public static boolean LIC2(List<Point> points, float epsilon) {
+    public static boolean LIC2(List<Point> points, double epsilon) {
         Queue<Point> pointQueue = new LinkedList<>();
 
         for (Point point : points) {
