@@ -33,7 +33,7 @@ public class LIC2 {
                 pointQueue.add(b);
                 pointQueue.add(c);
                 double angleInB = MathFunctions.calcAngleInPoint2(a, b, c);
-                if (angleInB < (Math.toRadians(PI) - epsilon) || angleInB > (Math.toRadians(PI) + epsilon)) {
+                if (angleInB < (PI - epsilon) || angleInB > (PI + epsilon)) {
                     return true;
                 }
             }
