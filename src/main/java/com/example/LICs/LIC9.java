@@ -16,6 +16,9 @@ public class LIC9 {
         if(points.size() < 5 || C_PTS < 1 || D_PTS < 1){
             return false;
         }
+        if(points.size() - C_PTS - D_PTS - 2 <= 0) {
+            return false;
+        }
         // assuming point1 and point 2 separated by C_PTS and point 2 and 3 separated by D_PTS
         for(int i = 0; i < points.size() - C_PTS - D_PTS - 2; i++) {
             Point p1 = points.get(i);
