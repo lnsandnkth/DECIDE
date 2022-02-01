@@ -28,15 +28,15 @@ public class LIC8Test {
                 new Point(5, 5),
                 new Point(3, -1)
         );
-        // Normal conditions that do not meet the requirement
-        Assertions.assertFalse(LIC8.LIC8(points, 2, 2, 0.5));
-        Assertions.assertFalse(LIC8.LIC8(points, 3, 1, 1));
+        // Normal conditions that meet the requirement
+        Assertions.assertTrue(LIC8.LIC8(points, 2, 2, 0.5));
+        Assertions.assertTrue(LIC8.LIC8(points, 3, 1, 1));
         // Conditions that do not have enough points
         Assertions.assertFalse(LIC8.LIC8(points, 6, 2, 2));
         Assertions.assertFalse(LIC8.LIC8(lessPoints, 6, 2, 2));
-        // Normal conditions that do meet the requirement
-        Assertions.assertTrue(LIC8.LIC8(points, 2, 2, 2));
-        Assertions.assertTrue(LIC8.LIC8(points, 1, 1, 1.5));
+        // Normal conditions that do not meet the requirement
+        Assertions.assertFalse(LIC8.LIC8(points, 2, 2, 6));
+        Assertions.assertFalse(LIC8.LIC8(points, 1, 1, 6));
 
     }
 

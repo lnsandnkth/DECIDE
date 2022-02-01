@@ -27,9 +27,7 @@ public class LIC8 {
             Point p2 = points.get(i + APts + 1);
             Point p3 = points.get(i + APts + BPts + 2);
             double smallestRadius = MathFunctions.calCircleByPoints(p1, p2, p3);
-            if (radius1 > smallestRadius) {
-                return true;
-            } else if (MathFunctions.compareDoublePara(radius1, smallestRadius) == 0) {
+            if (smallestRadius > radius1) {
                 return true;
             }
         }
