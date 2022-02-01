@@ -90,7 +90,7 @@ public class ConditionCheck {
 
         boolean[] FUV = new boolean[PUV.length];
         for (int i = 0; i < FUV.length; i++) {
-            FUV[i] = !PUV[i] && makeFUVEntry(PUM, i);
+            FUV[i] = !PUV[i] || makeFUVEntry(PUM, i);
         }
 
         return FUV;
