@@ -85,4 +85,22 @@ public class ConditionCheck {
             false   // TODO missing LIC
         };
     }
+
+    public static boolean[] makeFUV(boolean[][] PUM, boolean[] PUV) {
+
+        boolean[] FUV = new boolean[PUV.length];
+        for (int i = 0; i < FUV.length; i++) {
+            FUV[i] = !PUV[i] && makeFUVEntry(PUM, i);
+        }
+
+        return FUV;
+    }
+
+    private static boolean makeFUVEntry(boolean[][] PUM, int n) {
+
+        for (int i = 0; i < PUM[n].length; i++)
+            if(i != n && !PUM[n][i]) return false;
+
+        return true;
+    }
 }
