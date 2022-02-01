@@ -11,6 +11,10 @@ public class LIC4 {
 
     public static boolean LIC4(List<Point> points, int Q_PTS, int QUADS) {
 
+        // LIC parameter condition not met
+        if (Q_PTS < 2 || Q_PTS > points.size() || QUADS < 1 || QUADS > 3)
+            return false;
+
         Set<Integer> quadrants = new TreeSet<>();
 
         // for each point

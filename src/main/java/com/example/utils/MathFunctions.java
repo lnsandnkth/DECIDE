@@ -1,6 +1,4 @@
 package com.example.utils;
-import com.example.utils.Point;
-import java.util.List;
 
 import static java.lang.Math.*;
 
@@ -51,7 +49,6 @@ public class MathFunctions {
         float a = (float) sqrt(a2);
         float c = (float) sqrt(c2);
         float angleInP2 = (float) acos((a2 + c2 - b2) / (2 * a * c));
-        angleInP2 = (float) (angleInP2 * 180 / PI);
         return angleInP2;
     }
 
