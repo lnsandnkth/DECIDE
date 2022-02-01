@@ -1,6 +1,7 @@
 package ConditionTests;
 
-import com.example.LICs.*;
+import com.example.LICs.LIC0;
+import com.example.LICs.LIC2;
 import com.example.utils.Point;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -25,8 +26,12 @@ public class LIC2Test {
                 new Point(1,1),new Point(4, 5), new Point(1, 1), new Point(1,5));
         boolean res3 = LIC2.LIC2(secondPositiveOutComePointList,negativeEpsilon);
 
-        Assertions.assertTrue(res1);
-        Assertions.assertFalse(res2);
-        Assertions.assertTrue(res3);
+        Assertions.assertAll(
+            () -> Assertions.assertFalse(LIC2.LIC2(positiveOutComePointList, -1)),
+            () -> Assertions.assertFalse(LIC2.LIC2(positiveOutComePointList, (float) (2 * Math.PI))),
+            () -> Assertions.assertTrue(res1),
+            () -> Assertions.assertFalse(res2),
+            () -> Assertions.assertTrue(res3)
+                            );
     }
 }
