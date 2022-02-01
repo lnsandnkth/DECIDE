@@ -20,17 +20,18 @@ public class LIC1 {
             return false;
         }
 
-        int max_consecutive = 0;
+        for (int i = 2; i < points.size(); i++) {
 
-        int consecutive = 0;
-        for (Point point : points) {
-            if (!MathFunctions.isInCircle(point, radius)) {
-                consecutive++;
-                max_consecutive = Math.max(consecutive, max_consecutive);
-            } else
-                consecutive = 0;
+            Point p1 = points.get(i);
+            Point p2 = points.get(i - 1);
+            Point p3 = points.get(i - 2);
+
+            if (MathFunctions.calCircleByPoints(p1, p2, p3) > radius) {
+                return true;
+            }
+
         }
 
-        return max_consecutive >= 3;
+        return false;
     }
 }
