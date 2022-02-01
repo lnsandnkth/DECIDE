@@ -16,7 +16,7 @@ public class LIC8 {
      * @return (boolean) true is there are 3 points outside the circle
      */
     public static boolean LIC8(List<Point> points, int APts, int BPts, double radius1) {
-        if (points.size() < 5) {
+        if (points.size() < 5 || APts < 1 || BPts < 1) {
             return false;
         }
         if (points.size() - APts - BPts - 2 < 0) {
