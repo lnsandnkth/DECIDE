@@ -29,8 +29,13 @@ public class LIC4Test {
             () -> Assertions.assertTrue(LIC4.LIC4(list, 3, 2))
                             );
 
+        // Negative tests
         Assertions.assertAll(
-            () -> Assertions.assertFalse(LIC4.LIC4(list, 1, 1)),
+            () -> Assertions.assertFalse(LIC4.LIC4(list, 1, 1)), // Q PTS < 2
+            () -> Assertions.assertFalse(LIC4.LIC4(list, list.size() + 1, 1)), // Q PTS > NUMPOINTS
+            () -> Assertions.assertFalse(LIC4.LIC4(list, 2, 0)), // QUADS < 1
+            () -> Assertions.assertFalse(LIC4.LIC4(list, 2, 4)), // QUADS > 3
+
             () -> Assertions.assertFalse(LIC4.LIC4(list, 2, 2)),
             () -> Assertions.assertFalse(LIC4.LIC4(list, 4, 3))
                             );
