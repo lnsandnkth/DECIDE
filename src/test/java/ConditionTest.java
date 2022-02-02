@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 public class ConditionTest {
 
     @Test
@@ -39,5 +41,22 @@ public class ConditionTest {
     public void makeCMVTest() {
 
         // TODO make this test when all of the LICs are done
+    }
+
+    @Test
+    @DisplayName("makeFUV")
+    public void makeFUVTest() {
+
+        boolean[] PUV = { true, false, true };
+
+        boolean[][] PUM = {
+            { false, true, true, false },
+            { true, false, true, true },
+            { true, true, true, true }
+        };
+
+        boolean[] FUV = ConditionCheck.makeFUV(PUM, PUV);
+
+        Assertions.assertArrayEquals(new boolean[] { false, true, true }, FUV);
     }
 }
