@@ -22,16 +22,19 @@ public class LIC6 {
         }
 
         for (int i = 0; i < points.size() - N_PTS - 1; i++) {
-            if (MathFunctions.calDistance(points.get(i), points.get(i + N_PTS + 1)) > DIST){
-                return true;
-            }
-            if(points.get(i) == points.get(i + N_PTS + 1)){
-                double dist_to_all_others = 0.0d;
+            if(points.get(i).getX() == points.get(i + N_PTS + 1).getX() &&
+                    points.get(i).getY() == points.get(i + N_PTS + 1).getY()){
+                // points of the line are identical -> check distance from point(i) to all other N_PTS consecutive
                 for(int j = i+1;j < i + N_PTS + 1; j++){
-                    dist_to_all_others += MathFunctions.calDistance(points.get(i), points.get(j));
+                    if(MathFunctions.calDistance(points.get(i), points.get(j)) > DIST){
+                        return true;
+                    }
                 }
-                if(dist_to_all_others > DIST){
-                    return true;
+            }else{
+                for(int j = i + 1; j < i + N_PTS + 1; j++){
+                    if (MathFunctions.calcDistanceToLine(points.get(i), points.get(i + N_PTS + 1),points.get(j)) > DIST){
+                        return true;
+                    }
                 }
             }
         }
