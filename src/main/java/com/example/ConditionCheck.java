@@ -96,7 +96,7 @@ public class ConditionCheck {
      * Checks if all the conditions are true in line n of PUM
      * @param PUM PUM gotten from ConditionCheck#calcPUM
      * @param n row index ie condition index
-     * @see ConditionCheck#calcPUM(boolean[], LogicEnum[][])
+     * @see ConditionCheck#calcPUM(boolean[], CONNECTORS[][])
      * @return true if all conditions (excepted for diagonal) are true
      */
     private static boolean makeFUVEntry(boolean[][] PUM, int n) {
@@ -104,6 +104,19 @@ public class ConditionCheck {
         for (int i = 0; i < PUM[n].length; i++)
             if(i != n && !PUM[n][i]) return false;
 
+        return true;
+    }
+
+    /**
+     * Checks if all the elements in the FUV are true
+     * @param FUV FUV calculated by ConditionCheck#makeFUV
+     * @see ConditionCheck#makeFUVEntry(boolean[][], int)
+     * @return true if all elements are true
+     */
+    public static boolean checkFUV(boolean[] FUV) {
+        for (boolean element : FUV) {
+            if (!element) return false;
+        }
         return true;
     }
 }

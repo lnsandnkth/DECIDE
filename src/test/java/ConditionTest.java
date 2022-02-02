@@ -58,4 +58,13 @@ public class ConditionTest {
 
         Assertions.assertArrayEquals(new boolean[] { false, true, true }, FUV);
     }
+
+    @Test
+    @DisplayName("checkFUV: must return true if all the elements are true, otherwise false")
+    public void chekcFUVTest() {
+        boolean[] positiveFUV = { true, true, true };
+        boolean[] negativeFUV = { true, false, true };
+        Assertions.assertTrue(ConditionCheck.checkFUV(positiveFUV));
+        Assertions.assertFalse(ConditionCheck.checkFUV(negativeFUV));
+    }
 }
