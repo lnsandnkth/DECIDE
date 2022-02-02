@@ -14,7 +14,7 @@ public class ConditionTest {
     public void calcPUMTest() {
         // this test input follows the example 1 on Page 5-6
         boolean[] CMV = {false, true, true, true, false, false};
-        CONNECTORS[][] LIC = {
+        CONNECTORS[][] LCM = {
             {CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.ORR,CONNECTORS.ANDD,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
             {CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.ORR,CONNECTORS.ORR,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
             {CONNECTORS.ORR,CONNECTORS.ORR,CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
@@ -31,8 +31,7 @@ public class ConditionTest {
                 {true, true, true, true, true, true},
                 {true, true, true, true, true, true}
         };
-
-        Assertions.assertArrayEquals(expectedPUM, ConditionCheck.calcPUM(CMV, LIC));
+        Assertions.assertArrayEquals(expectedPUM, ConditionCheck.calcPUM(CMV, LCM));
     }
 
     @Test
