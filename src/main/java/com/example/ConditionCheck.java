@@ -73,4 +73,37 @@ public class ConditionCheck {
             false   // TODO missing LIC
         };
     }
+
+    /**
+     * Make FUV from a PUM and a PUV
+     * uses ConditionCheck#makeFUVEntry(boolean[][], int)
+     * @param PUM PUM gotten from ConditionCheck#calcPUM
+     * @param PUV PUV gotten from parameters
+     * @see ConditionCheck#makeFUVEntry(boolean[][], int)
+     * @return PUV vector with true on each line i where PUM[i][i!=j] == true or where PUV[i] == false
+     */
+    public static boolean[] makeFUV(boolean[][] PUM, boolean[] PUV) {
+
+        boolean[] FUV = new boolean[PUV.length];
+        for (int i = 0; i < FUV.length; i++) {
+            FUV[i] = !PUV[i] || makeFUVEntry(PUM, i);
+        }
+
+        return FUV;
+    }
+
+    /**
+     * Checks if all the conditions are true in line n of PUM
+     * @param PUM PUM gotten from ConditionCheck#calcPUM
+     * @param n row index ie condition index
+     * @see ConditionCheck#calcPUM(boolean[], LogicEnum[][])
+     * @return true if all conditions (excepted for diagonal) are true
+     */
+    private static boolean makeFUVEntry(boolean[][] PUM, int n) {
+
+        for (int i = 0; i < PUM[n].length; i++)
+            if(i != n && !PUM[n][i]) return false;
+
+        return true;
+    }
 }
