@@ -62,15 +62,15 @@ public class ConditionCheck {
             LIC3.LIC3(points, parameters.AREA1),
             LIC4.LIC4(points, parameters.Q_PTS, parameters.QUADS),
             LIC5.LIC5(points),
-            false,  // TODO missing LIC
-            false,  // TODO missing LIC
-            false,  // TODO missing LIC
-            false,  // TODO missing LIC
-            false,  // TODO missing LIC
-            false,  // TODO missing LIC
-            false,  // TODO missing LIC
-            false,  // TODO missing LIC
-            false   // TODO missing LIC
+            LIC6.LIC6(points, parameters.N_PTS, parameters.DIST),
+            LIC7.LIC7(points, parameters.K_PTS, parameters.LENGTH1),
+            LIC8.LIC8(points, parameters.A_PTS, parameters.B_PTS, parameters.RADIUS1),
+            LIC9.LIC9(points, parameters.EPSILON, parameters.C_PTS, parameters.D_PTS),
+            LIC10.LIC10(points, parameters.E_PTS, parameters.F_PTS, parameters.AREA1),
+            LIC11.LIC11(points, parameters.G_PTS),
+            LIC12.LIC12(points, parameters.K_PTS, parameters.LENGTH1, parameters.LENGTH2),
+            LIC13.LIC13(points, parameters.A_PTS, parameters.B_PTS, parameters.RADIUS1, parameters.RADIUS2),
+            LIC14.LIC14(points, parameters.E_PTS, parameters.K_PTS, parameters.AREA1, parameters.AREA2)
         };
     }
 
