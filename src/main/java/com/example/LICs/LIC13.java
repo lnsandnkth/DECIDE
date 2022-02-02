@@ -1,10 +1,9 @@
 package com.example.LICs;
 
+import com.example.utils.MathFunctions;
 import com.example.utils.Point;
 
 import java.util.List;
-
-import static com.example.utils.MathFunctions.isInCircle;
 
 public class LIC13 {
     /**
@@ -23,7 +22,8 @@ public class LIC13 {
             Point firstPoint = points.get(currentIndex);
             Point secondPoint = points.get(currentIndex + a_pts + 1);
             Point thirdPoint = points.get(currentIndex + a_pts + b_pts + 2);
-            if (isInCircle(firstPoint, radius) || isInCircle(secondPoint, radius) || isInCircle(secondPoint, radius)) {
+            double smallestRadius = MathFunctions.calCircleByPoints(firstPoint, secondPoint, thirdPoint);
+            if (smallestRadius<=radius) {
                 return false;
             }
             currentIndex++;
