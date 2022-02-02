@@ -2,8 +2,12 @@
 # DECIDE()
 
 This Github repository is aimed at solving the DECIDE()-project for the course DD2480
+![alt text](https://cdn.pixabay.com/photo/2018/03/14/15/33/earth-3225519_1280.png)
 
-Way of Working:
+##Documentation
+
+
+##Way of Working:
 
 | State        | Checklist           | done  |
 | ------------- |:-------------:| -----:|
@@ -28,12 +32,16 @@ Way of Working:
 | In Place | The practices and tools are being used by the whole team to perform their work  | x |
 | | All team members have access to the practices and tools required to do their work | x |
 | | The whole team is involved in the inspection and adaptation of the way-of-working | x |
-| Working well | Team members are making progress as planned by using and adapting the way-of-working to suit their current context | - |
+| Working well | Team members are making progress as planned by using and adapting the way-of-working to suit their current context | x |
 | | The team naturally applies the practices without thinking about them. | - |
-| | The tools naturally support the way that the team works. | - |
-| | The team continually tunes their use of the practices and tools. | - |
+| | The tools naturally support the way that the team works. | x |
+| | The team continually tunes their use of the practices and tools. | x |
 | Retired | The team's way of working is no longer being used. | - |
 |  | Lessons learned are shared for future use. | -  |
+
+*State we are in*: Working well <br>
+*Why*: Because we fulfil the previous requirements in the checklist. We are not yet accustomed enough to our way-of-working to be in the next one<br>
+*What are the obstacles to reach the next state*: We need to get used to our environment more, so the way-of-working becomes natural to us <br>
 
 
 
