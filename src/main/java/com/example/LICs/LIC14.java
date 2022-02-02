@@ -16,8 +16,8 @@ public class LIC14 {
             Point p2 = points.get(i + E_PTS + 1);
             Point p3 = points.get(i + E_PTS + K_PTS + 2);
             double area = Math.abs(MathFunctions.isTriangleArea(p1, p2, p3));
-            if(area - AREA1 > 0.000001) cond1 = true;
-            if(area - AREA2 < 0.000001) cond2 = true;
+            if(MathFunctions.compareDoublePara(area, AREA1) == 1) cond1 = true;
+            if(MathFunctions.compareDoublePara(area, AREA2) == -1) cond2 = true;
         }
 
         return cond1 && cond2;
