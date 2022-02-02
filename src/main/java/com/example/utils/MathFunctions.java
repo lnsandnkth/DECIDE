@@ -81,7 +81,20 @@ public class MathFunctions {
         return 1 + (int)(2 * phase / PI); // normal case
     }
 
-    /**
+    
+  /**
+     * computes the distance between a point a and a line form l1 to l2
+     * @param l1 one point of the line
+     * @param l2 other point of the line
+     * @param a point to which the distance is calculated
+     * @return distance between a point and a line
+     */
+    public static double calcDistanceToLine(Point l1, Point l2, Point a){
+        return Math.abs((l2.getX() - l1.getX()) * (l1.getY() - a.getY()) - (l1.getX() - a.getX()) * (l2.getY() - l1.getY()))
+                            / Math.sqrt(Math.pow((l2.getX() - l1.getX()),2) + Math.pow((l2.getY() - l1.getY()),2));
+    }
+
+  /**
      * Calculate the smallest radius of the circle including three points p1, p2, p3
      * @param p1 Point
      * @return (double) the smallest radius of the circle including by three points
