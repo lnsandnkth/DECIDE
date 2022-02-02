@@ -4,6 +4,7 @@ import java.util.List;
 import com.example.utils.*;
 
 public class LIC12 {
+
     /**
      * LIC12 - Launch Interceptor Condition #12
      * Checks if there exists at least one set of two data points, separated by exactly K_PTS consecutive
