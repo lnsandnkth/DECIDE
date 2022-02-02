@@ -1,11 +1,9 @@
 package com.example;
 
-import com.example.utils.LogicEnum;
-
 import com.example.LICs.*;
 import com.example.utils.PARAMETERS_T;
 import com.example.utils.Point;
-
+import com.example.utils.CONNECTORS;
 
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class ConditionCheck {
      * @throws IllegalArgumentException check CMV and LCM
      * @return (boolean[][]) PUM, a 15x15 symmetric matrix
      */
-    public static boolean[][] calcPUM(boolean[] CMV, LogicEnum[][] LCM) throws IllegalArgumentException {
+    public static boolean[][] calcPUM(boolean[] CMV, CONNECTORS[][] LCM) throws IllegalArgumentException {
         if (CMV.length != LCM.length) throw new IllegalArgumentException("CMV and LCM entries number should match");
         int num = LCM.length;
         boolean[][] PUM = new boolean[num][num];
@@ -41,7 +39,7 @@ public class ConditionCheck {
      * @param ijLCM LCM[i, j]
      * @return (boolean) PUM[i, j]
      */
-    public static boolean calcEntry(boolean iCMV, boolean jCMV, LogicEnum ijLCM) {
+    public static boolean calcEntry(boolean iCMV, boolean jCMV, CONNECTORS ijLCM) {
         return switch (ijLCM) {
             case NOTUSED -> true;
             case ANDD -> iCMV && jCMV;

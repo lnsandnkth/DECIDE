@@ -1,6 +1,5 @@
 import com.example.ConditionCheck;
-import com.example.utils.LogicEnum;
-import com.example.utils.Point;
+import com.example.utils.CONNECTORS;
 import org.junit.jupiter.api.Assertions;
 
 import org.junit.jupiter.api.DisplayName;
@@ -13,13 +12,13 @@ public class ConditionTest {
     public void calcPUMTest() {
         // this test input follows the example 1 on Page 5-6
         boolean[] CMV = {false, true, true, true, false, false};
-        LogicEnum[][] LIC = {
-                {LogicEnum.ANDD, LogicEnum.ANDD, LogicEnum.ORR, LogicEnum.ANDD, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.ANDD, LogicEnum.ANDD, LogicEnum.ORR, LogicEnum.ORR, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.ORR, LogicEnum.ORR, LogicEnum.ANDD, LogicEnum.ANDD, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.ANDD, LogicEnum.ORR, LogicEnum.ANDD, LogicEnum.ANDD, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED}
+        CONNECTORS[][] LIC = {
+            {CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.ORR,CONNECTORS.ANDD,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.ORR,CONNECTORS.ORR,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.ORR,CONNECTORS.ORR,CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.ANDD,CONNECTORS.ORR,CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED}
         };
 
         boolean[][] expectedPUM = {
