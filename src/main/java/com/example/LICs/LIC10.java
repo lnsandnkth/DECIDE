@@ -13,7 +13,7 @@ public class LIC10 {
      * @param AREA_1 Area to be checked against the triangle area that the three points form.
      * @return True if there is three such points that they form an area greater than AREA_1, otherwise return false.
      */
-    public static boolean LIC10(List<Point> points, int e_pts, int f_pts, float AREA_1) {
+    public static boolean LIC10(List<Point> points, int e_pts, int f_pts, double AREA_1) {
         int currentIndex = 0;
         if (points.size()<5 || !(e_pts >=1) || !(f_pts>=1) || !(e_pts+f_pts<=points.size()+3)) {
             return false;

@@ -1,6 +1,5 @@
 import com.example.ConditionCheck;
-import com.example.utils.LogicEnum;
-import com.example.utils.Point;
+import com.example.utils.CONNECTORS;
 import org.junit.jupiter.api.Assertions;
 
 import org.junit.jupiter.api.DisplayName;
@@ -15,13 +14,13 @@ public class ConditionTest {
     public void calcPUMTest() {
         // this test input follows the example 1 on Page 5-6
         boolean[] CMV = {false, true, true, true, false, false};
-        LogicEnum[][] LIC = {
-                {LogicEnum.ANDD, LogicEnum.ANDD, LogicEnum.ORR, LogicEnum.ANDD, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.ANDD, LogicEnum.ANDD, LogicEnum.ORR, LogicEnum.ORR, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.ORR, LogicEnum.ORR, LogicEnum.ANDD, LogicEnum.ANDD, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.ANDD, LogicEnum.ORR, LogicEnum.ANDD, LogicEnum.ANDD, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED},
-                {LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED, LogicEnum.NOTUSED}
+        CONNECTORS[][] LCM = {
+            {CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.ORR,CONNECTORS.ANDD,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.ORR,CONNECTORS.ORR,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.ORR,CONNECTORS.ORR,CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.ANDD,CONNECTORS.ORR,CONNECTORS.ANDD,CONNECTORS.ANDD,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED},
+            {CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED,CONNECTORS.NOTUSED}
         };
 
         boolean[][] expectedPUM = {
@@ -32,15 +31,7 @@ public class ConditionTest {
                 {true, true, true, true, true, true},
                 {true, true, true, true, true, true}
         };
-
-        Assertions.assertArrayEquals(expectedPUM, ConditionCheck.calcPUM(CMV, LIC));
-    }
-
-    @Test
-    @DisplayName("makeCMV : must give a boolean array of length 15 containing the result of the 15 LICs in order")
-    public void makeCMVTest() {
-
-        // TODO make this test when all of the LICs are done
+        Assertions.assertArrayEquals(expectedPUM, ConditionCheck.calcPUM(CMV, LCM));
     }
 
     @Test
@@ -58,5 +49,14 @@ public class ConditionTest {
         boolean[] FUV = ConditionCheck.makeFUV(PUM, PUV);
 
         Assertions.assertArrayEquals(new boolean[] { false, true, true }, FUV);
+    }
+
+    @Test
+    @DisplayName("checkFUV: must return true if all the elements are true, otherwise false")
+    public void chekcFUVTest() {
+        boolean[] positiveFUV = { true, true, true };
+        boolean[] negativeFUV = { true, false, true };
+        Assertions.assertTrue(ConditionCheck.checkFUV(positiveFUV));
+        Assertions.assertFalse(ConditionCheck.checkFUV(negativeFUV));
     }
 }
