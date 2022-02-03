@@ -55,7 +55,11 @@ This Github repository is aimed at solving the DECIDE()-project for the course D
     - wrote down the way-of-working in the README (and discussed it with the team)
     - looked up how to do ci in github (with actions/workflow) and did the initial configuration
 - [@mxyns](https://www.github.com/mxyns)
-- [@yuxin-miao](https://www.github.com/yuxin-miao)
+- [@yuxin-miao](https://www.github.com/yuxin-miao) *Xinmiao Yu* :
+  - did LIC0, 3, 8 with tests and reviewed others LICs;
+  - did the calculation of PUM with test;
+  - add global declarations;
+  - did the main DECIDE() function and mainTest;
 - [@sandy-e](https://www.github.com/sandy-e)
 - [@noahra](https://www.github.com/noahra)
 
