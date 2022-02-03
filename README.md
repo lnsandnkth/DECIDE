@@ -54,7 +54,11 @@ This Github repository is aimed at solving the DECIDE()-project for the course D
     - did a code test coverage check(idea by @mxyns): we have a 96% line coverage
     - wrote down the way-of-working in the README (and discussed it with the team)
     - looked up how to do ci in github (with actions/workflow) and did the initial configuration
-- [@mxyns](https://www.github.com/mxyns)
+- [@mxyns](https://www.github.com/mxyns) *Maxence Younsi*
+  - LIC1, LIC4, LIC5, makeCMV, makeFUV with doc and tests
+  - gradle initial setup (w/ team) + jdk automatic toolchain jdk15, unit test setup
+  - added missing tests & doc
+  - PR review
 - [@yuxin-miao](https://www.github.com/yuxin-miao) *Xinmiao Yu* :
   - did LIC0, 3, 8 with tests and reviewed others LICs;
   - did the calculation of PUM with test;
