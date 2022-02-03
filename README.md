@@ -47,7 +47,13 @@ This Github repository is aimed at solving the DECIDE()-project for the course D
 
 ## Authors
 
-- [@lnsandnkth](https://www.github.com/lnsandnkth)
+- [@lnsandnkth](https://www.github.com/lnsandnkth) *Leon Sandner* :  
+    - created the github repo;
+    - refactored the project (with the team) so we have less probability of merge conflicts and a better way-of-working;
+    - did LIC6,11,12 and reviewed some of the others' LICs;
+    - did a code test coverage check(idea by @mxyns): we have a 96% line coverage
+    - wrote down the way-of-working in the README (and discussed it with the team)
+    - looked up how to do ci in github (with actions/workflow) and did the initial configuration
 - [@mxyns](https://www.github.com/mxyns)
 - [@yuxin-miao](https://www.github.com/yuxin-miao)
 - [@sandy-e](https://www.github.com/sandy-e)
