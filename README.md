@@ -4,10 +4,28 @@
 This Github repository is aimed at solving the DECIDE()-project for the course DD2480
 ![alt text](https://cdn.pixabay.com/photo/2018/03/14/15/33/earth-3225519_1280.png)
 
-##Documentation
+## Documentation
+This project is part of a hypothetical anti-ballistic missile system. Main function is `DECIDE()`, which will generate a boolean signal to 
+determine whether an interceptor should be lauched. The output is based upon input radar tracking information. 
+## Requirement
+ - JDK 15 or above
+ - Gradle 
+## Test 
+ To run all the tests, use the command 
+``./gradlew clean test``.
+## File Structure 
+Under `src/main/java/com.example`:
+- `Main.java`: The upper level function combines all the functions. Main logic of `DECIDE()`.
+- `LICs`: Contains all the LIC calculation. 
+- `utils`: Contains global declarations and common used functions. 
+- `ConditionCheck.java`: Includes calculation of CMV, PUM and FUV.
 
-
-##Way of Working:
+Under `src/test/java`: 
+- `MainTest.java`: Test the whole things with standard inputs.
+- `ConditionTests`: Test each LIC for multiple conditions.
+- `MathTest.java`: Test all the math functions. 
+- `ConditionTest.java`: Test the calculation of CMV, PUM and FUV.
+## Way of Working:
 
 | State        | Checklist           | done  |
 | ------------- |:-------------:| -----:|
