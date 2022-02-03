@@ -80,4 +80,11 @@ class LIC14Test {
         Assertions.assertFalse(LIC14.LIC14(list, 2, 2, 1, 300));
     }
 
+    @Test
+    @DisplayName("Test LIC14 for bad parameter range")
+    public void BadParameterTest() {
+
+        // AREA2 >= 0 is the only specified condition in DECIDE specification
+        Assertions.assertFalse(LIC14.LIC14(list, 1, 1, 1, -1));
+    }
 }

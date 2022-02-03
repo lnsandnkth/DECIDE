@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class LIC5Test {
                                                 );
 
         Assertions.assertAll(
+            () -> Assertions.assertFalse(LIC5.LIC5(new ArrayList<>())),
             () -> Assertions.assertTrue(LIC5.LIC5(positiveList)),
             () -> Assertions.assertFalse(LIC5.LIC5(negativeList))
                             );

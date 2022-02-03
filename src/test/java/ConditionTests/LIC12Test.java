@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class LIC12Test {
+
     @Test
     @DisplayName("LIC12 Test: should return true if there exists at least one set of two data points, separated by exactly K_PTS consecutive" +
             " intervening points, which are a distance greater than the length LENGTH1;" +
@@ -47,7 +48,12 @@ public class LIC12Test {
         );
 
         Assertions.assertAll(
-                () -> Assertions.assertTrue(LIC12.LIC12(positiveList,1,2.5,2.5)),
+            // Parameter range check
+            // there may be missing a condition+test on LENGTH1 but it is not in the specification
+            () -> Assertions.assertFalse(LIC12.LIC12(positiveList.subList(0, 1),1,2.5,2.5)),
+            () -> Assertions.assertFalse(LIC12.LIC12(positiveList,1,2.5,-2)),
+
+            () -> Assertions.assertTrue(LIC12.LIC12(positiveList,1,2.5,2.5)),
                 () -> Assertions.assertFalse(LIC12.LIC12(negativeList,2,50,0.05)),
                 () -> Assertions.assertFalse(LIC12.LIC12(negativeList2,1,2,1))
         );
