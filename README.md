@@ -92,7 +92,8 @@ For more information check the [detailed specification](https://canvas.kth.se/co
   - implemented LIC7, LIC9, LIC14 and their corresponding unit tests
   - reviewed and approved pull requests
 - [@noahra](https://www.github.com/noahra) *Noah Rahimzadagan:*
-  - wrote LIC2,LIC10, LIC13 with its tests and reviewed other LICs.
+  - wrote LIC2,LIC10, LIC13 with its tests and reviewed other LICs. 
+  - Set up Slack-channel and Zoom-meetings.
 
 
 ## Appendix
