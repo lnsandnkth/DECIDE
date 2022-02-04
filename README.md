@@ -1,11 +1,34 @@
 
 # DECIDE()
 
-This Github repository is aimed at solving the DECIDE()-project for the course DD2480
+This Github repository is aimed at solving the DECIDE()-project for the course DD2480.
+
 ![alt text](https://cdn.pixabay.com/photo/2018/03/14/15/33/earth-3225519_1280.png)
 
 ##Documentation
 
+### What's DECIDE() ?
+
+DECIDE() is part of a hypothetical anti-ballistic missile system. DECIDE() generates a boolean signal which represents if a missile interceptor should be launched ie outputs `true` / `false` or "YES" / "NO".    
+This decision is took based on the input data points which represent radar tracking information. These points are processed by 15 LICs whose boolean outputs, assembled into a CMV, are combined using a LCM and stored into a PUM.
+The PUV will then determine if each LIC's output should be considered or not in the decision to make. It is used to combine the PUM's values into a FUV which, if all of its values are `true`, will take the decision to launch an interceptor.
+
+Order in which the data is used :
+1. LIC Launch Interceptor Condition.
+2. CMV Conditions Met Vector.
+3. LCM Logical Connector Matrix.
+4. PUM Preliminary Unlocking Matrix.
+5. PUV Preliminary Unlocking Vector.
+6. FUV Final Unlocking Vector.
+7. Decision
+
+For more information check the [detailed specification](https://canvas.kth.se/courses/31884/files/4932282/download?wrap=1)
+
+### How to build and run
+0. (Any Java JRE Needed)
+1. run `./gradlew check` to setup environment
+2. run `./gradlew clean test` to run tests
+3. tests should pass (no main function at the moment, demo DECIDE() runs are done in [MainTest](https://github.com/lnsandnkth/DECIDE/blob/main/src/test/java/MainTest.java))
 
 ##Way of Working:
 
@@ -54,7 +77,8 @@ This Github repository is aimed at solving the DECIDE()-project for the course D
     - did a code test coverage check(idea by @mxyns): we have a 96% line coverage
     - wrote down the way-of-working in the README (and discussed it with the team)
     - looked up how to do ci in github (with actions/workflow) and did the initial configuration
-- [@mxyns](https://www.github.com/mxyns)
+- [@mxyns](https://www.github.com/mxyns) *Maxence Younsi*
+  - project description / build instructions
 - [@yuxin-miao](https://www.github.com/yuxin-miao) *Xinmiao Yu* :
   - did LIC0, 3, 8 with tests and reviewed others LICs;
   - did the calculation of PUM with test;
