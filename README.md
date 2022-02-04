@@ -88,7 +88,9 @@ For more information check the [detailed specification](https://canvas.kth.se/co
   - did the calculation of PUM with test;
   - add global declarations;
   - did the main DECIDE() function and mainTest;
-- [@sandy-e](https://www.github.com/sandy-e)
+- [@sandy-e](https://www.github.com/sandy-e) *Sanherib Elia*:
+  - implemented LIC7, LIC9, LIC14 and their corresponding unit tests
+  - reviewed and approved pull requests
 - [@noahra](https://www.github.com/noahra) *Noah Rahimzadagan:*
   - wrote LIC2,LIC10, LIC13 with its tests and reviewed other LICs.
 
