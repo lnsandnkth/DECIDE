@@ -61,7 +61,8 @@ This Github repository is aimed at solving the DECIDE()-project for the course D
   - add global declarations;
   - did the main DECIDE() function and mainTest;
 - [@sandy-e](https://www.github.com/sandy-e)
-- [@noahra](https://www.github.com/noahra)
+- [@noahra](https://www.github.com/noahra) *Noah Rahimzadagan:*
+  - wrote LIC2,LIC10, LIC13 with its tests and reviewed other LICs.
 
 
 ## Appendix
