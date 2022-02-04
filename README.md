@@ -20,7 +20,7 @@ Order in which the data is used :
 4. PUM Preliminary Unlocking Matrix.
 5. PUV Preliminary Unlocking Vector.
 6. FUV Final Unlocking Vector.
-7. Decision
+7. Decision (boolean)
 
 For more information check the [detailed specification](https://canvas.kth.se/courses/31884/files/4932282/download?wrap=1)
 
