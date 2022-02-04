@@ -79,13 +79,18 @@ For more information check the [detailed specification](https://canvas.kth.se/co
     - looked up how to do ci in github (with actions/workflow) and did the initial configuration
 - [@mxyns](https://www.github.com/mxyns) *Maxence Younsi*
   - project description / build instructions
+  - LIC1, LIC4, LIC5, makeCMV, makeFUV with doc and tests
+  - gradle initial setup (w/ team) + jdk automatic toolchain jdk15, unit test setup
+  - added missing tests & doc
+  - PR review
 - [@yuxin-miao](https://www.github.com/yuxin-miao) *Xinmiao Yu* :
   - did LIC0, 3, 8 with tests and reviewed others LICs;
   - did the calculation of PUM with test;
   - add global declarations;
   - did the main DECIDE() function and mainTest;
 - [@sandy-e](https://www.github.com/sandy-e)
-- [@noahra](https://www.github.com/noahra)
+- [@noahra](https://www.github.com/noahra) *Noah Rahimzadagan:*
+  - wrote LIC2,LIC10, LIC13 with its tests and reviewed other LICs.
 
 
 ## Appendix
